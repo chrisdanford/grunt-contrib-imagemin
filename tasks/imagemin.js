@@ -120,14 +120,14 @@ module.exports = function (grunt) {
                         args: pngquantArgs
                     }, function () {
                         if (grunt.file.exists(dest)) {
-                            grunt.file.delete(dest);
+                            grunt.file.delete(dest, {force: true});
                         }
 
                         grunt.util.spawn({
                             cmd: optipngPath,
                             args: optipngArgs.concat(['-out', dest, tmpDest])
                         }, function () {
-                            grunt.file.delete(tmpDest);
+                            grunt.file.delete(tmpDest, {force: true});
                             processed();
                         });
                     });
@@ -136,7 +136,7 @@ module.exports = function (grunt) {
                     fs.createReadStream(src).pipe(cp.stdin);
                 } else {
                     if (dest !== src && grunt.file.exists(dest)) {
-                        grunt.file.delete(dest);
+                        grunt.file.delete(dest, {force: true});
                     }
 
                     cp = grunt.util.spawn({
