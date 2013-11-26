@@ -1,5 +1,5 @@
 {
-  "name": "grunt-contrib-imagemin",
+  "name": "grunt-contrib-imagemin-pinterest",
   "description": "Minify PNG, JPEG and GIF images",
   "version": "0.3.0",
   "homepage": "https://github.com/gruntjs/grunt-contrib-imagemin",
